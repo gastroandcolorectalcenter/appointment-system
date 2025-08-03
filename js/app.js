@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Time slots for each hospital
     const hospitalTimeSlots = {
-        'Sumeru': ['4:00 PM', '4:10 PM', '4:20 PM', '4:30 PM', '4:40 PM', '4:50 PM'],
-        'Vayodha': ['5:15 PM', '5:25 PM', '5:35 PM', '5:45 PM', 5:55 PM],
-        'Norvic': ['5:30 PM', '5:40 PM', '5:50 PM', '6:00 PM']
+        'Sumeru': ['10:00 AM', '11:00 AM', '12:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'],
+        'Vayodha': ['9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM'],
+        'Norvic': ['2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
     };
 
     // Set min date to today and max date to 30 days from now

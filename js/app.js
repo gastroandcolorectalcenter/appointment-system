@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Replace this URL with your Google Apps Script Web App URL after deployment
-            const scriptUrl = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbyTGCGhbQ-rg9HeIhsBUbcs2GH24eJ3pfKnbYrnR3G6HG0O92FoskQcMmBNA-W_jB_S8Q/exec';
             
             const response = await fetch(scriptUrl, {
                 method: 'POST',

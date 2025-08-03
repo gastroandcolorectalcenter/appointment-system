@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Appointment Booking</title>
+    <title>Appointment Booking</title>
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -12,38 +12,38 @@
         <h1>Book Your Appointment</h1>
         <form id="appointmentForm" method="POST">
             <div class="form-group">
-                <label for="name">Full Name*</label>
-                <input type="text" id="name" name="name" required>
+<!--                 <label for="name">Full Name*</label> -->
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
             </div>
 
             <div class="form-group">
-                <label for="address">Address*</label>
-                <input type="text" id="address" name="address" required>
+<!--                 <label for="address">Address*</label> -->
+                <input type="text" id="address" name="address" placeholder="Your Address" required>
             </div>
 
             <div class="form-group">
-                <label for="mobile">Mobile Number*</label>
-                <input type="tel" id="mobile" name="mobile" required>
+<!--                 <label for="mobile">Mobile Number*</label> -->
+                <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
+<!--                 <label for="email">Email*</label> -->
+                <input type="email" id="email" name="email" placeholder="Your email" required>
             </div>
 
             <div class="form-group">
                 <label for="hospital">Select Hospital*</label>
                 <select id="hospital" name="hospital" required>
                     <option value="">Choose a hospital...</option>
-                    <option value="Sumeru">Sumeru Hospital Dhapakhel (Sun-Fri)</option>
-                    <option value="Vayodha">Vayodha Hospital (Sun, Tue, Thu)</option>
-                    <option value="Norvic">Norvic International Hospital (Wed, Fri)</option>
+                    <option value="Sumeru">Sumeru Hospital Dhapakhel (Available: Sun-Fri)</option>
+                    <option value="Vayodha">Vayodha Hospital (Available: Sun, Tue, & Thu)</option>
+                    <option value="Norvic">Norvic International Hospital (Available: Wed,& Fri)</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="appointmentDate">Appointment Date*</label>
-                <input type="date" id="appointmentDate" name="appointmentDate" required>
+<!--                 <label for="appointmentDate">Appointment Date*</label> -->
+                <input type="date" id="appointmentDate" name="appointmentDate" placeholder="Choose date of appointmemt" required>
             </div>
 
             <div class="form-group">
@@ -52,8 +52,8 @@
             </div>
 
             <div class="form-group">
-                <label for="purpose">Purpose of Visit*</label>
-                <textarea id="purpose" name="purpose" required></textarea>
+<!--                 <label for="purpose">Purpose of Visit*</label> -->
+                <textarea id="purpose" name="purpose" placeholder="Purpose of Visit" required></textarea>
             </div>
 
             <div class="form-group">

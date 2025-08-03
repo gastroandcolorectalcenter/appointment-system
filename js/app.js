@@ -58,33 +58,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Form submission
-    form.addEventListener('submit', function(e) {
+    // Form submission with Google Sheets integration
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // Validate reCAPTCHA
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-            alert('Please complete the reCAPTCHA verification.');
-            return;
-        }
-
-        // Collect form data
         const formData = new FormData(form);
         const appointmentData = Object.fromEntries(formData);
 
-        // Show confirmation modal
-        confirmationMessage.innerHTML = `
-            Thank you ${appointmentData.name}!<br><br>
-            Your appointment has been scheduled for ${appointmentData.appointmentDate} at ${appointmentData.timeSlot}<br>
-            at ${appointmentData.hospital}.<br><br>
-            We will contact you at ${appointmentData.mobile} or ${appointmentData.email} to confirm your appointment.
-        `;
-        modal.style.display = 'block';
+        try {
+            // Replace this URL with your Google Apps Script Web App URL after deployment
+            const scriptUrl = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+            
+            const response = await fetch(scriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(appointmentData)
+            });
 
-        // Reset form and reCAPTCHA
-        form.reset();
-        grecaptcha.reset();
+            // Show confirmation modal
+            confirmationMessage.innerHTML = `
+                Thank you ${appointmentData.name}!<br><br>
+                Your appointment has been scheduled for ${appointmentData.appointmentDate} at ${appointmentData.timeSlot}<br>
+                at ${appointmentData.hospital}.<br><br>
+                We will contact you at ${appointmentData.mobile} or ${appointmentData.email} to confirm your appointment.
+            `;
+            modal.style.display = 'block';
+
+            // Reset form
+            form.reset();
+
+            // Send notification to Telegram (you'll add your bot integration later)
+            // sendTelegramNotification(appointmentData);
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error submitting your appointment. Please try again.');
+        }
     });
 
     // Close modal
